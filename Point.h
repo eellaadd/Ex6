@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include "IllegalCharException.h"
 using namespace std;
 
 class Point{
@@ -8,23 +9,30 @@ class Point{
     int y;
     char data;
     
-    Point(int x,int y):
-    x(x),y(y){
+    Point(){
+        data = '.';
     }
+    
+    Point(int x,int y){
+        this->x = x;
+        this->y = y;
+        this->data = '.';
+    }
+    
+    Point(const Point & p)
+    {
+        this->x = p.x;
+        this->y = p.y;
+        this->data = p.data;
+    }
+    
+    Point operator=(const char c);
     
     friend ostream& operator<<(ostream& os, Point& p) {  
-         os << p.x << "," << p.y << endl;
-    return os;  
+        os << p.data;
+        return os; 
     }
-    
-    Point &Point::operator=(const char ch){
-        
-        if (ch == '.' || ch == 'X' || ch == 'O')
-            data = ch;
-        else {
-            IllegalCharException ex {ch};
-            throw ex;
-        }
-        return *this;
-    }
+    operator char();
 };
+
+bool operator == (Point const &, char const &);
