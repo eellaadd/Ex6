@@ -36,3 +36,6 @@ Point::operator char(){
 bool operator == (Point const & l, char const & r){
     return l.data == r;
 }
+// char operator= (char c, Point& p){ 
+//     return p.data;
+// }
