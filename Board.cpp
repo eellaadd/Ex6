@@ -3,7 +3,6 @@
 #include <iostream>
 using namespace std;
 
-
 Board& Board::operator=(const char w){
     if(w == '.'|| w == 'O' || w == 'X'){
         for (int i = 0; i < size; i++) {
@@ -37,7 +36,6 @@ bool Board::operator == (Board const & r){
     return true;
 }
 
-
 ostream& operator<<(ostream& os, Board const& b) {  
       for (int i = 0; i < b.size; i++) {
         for(int j=0; j<b.size; j++){
@@ -55,7 +53,6 @@ Point& Board::operator[](Point p){
     else{
         return pBoard[p.x][p.y];
     }
-
 }
 
 const Point& Board::operator[](Point p) const{
@@ -65,7 +62,6 @@ const Point& Board::operator[](Point p) const{
     else{
         return pBoard[p.x][p.y];
     }
-
 }
 
 void Board::free(){
@@ -73,13 +69,6 @@ void Board::free(){
         delete[] pBoard[i];
     delete[] pBoard;
 }
-
-// void Board::free(){
-//     for(int i = 0; i < size; i++){
-//         delete[] pBoard[i];
-//     }
-//     delete[] pBoard;
-// }
 
 Board::~Board(){
 	free();
