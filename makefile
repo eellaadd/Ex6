@@ -1,7 +1,7 @@
 a.out: Board.o IllegalCharException.o IllegalCoordinateException.o Pair.o
 
-Pair.o: Point.cpp Pair.h
-	clang++-5.0 -std=c++17 -c Pair.cpp
+Point.o: Point.cpp point.h
+	clang++-5.0 -std=c++17 -c Point.cpp
 Board.o: Board.cpp Board.h
 	clang++-5.0 -std=c++17 -c Board.cpp
 IllegalCharException.o: IllegalCharException.cpp IllegalCharException.h
