@@ -23,19 +23,6 @@ Point::operator char(){
     return data;
 }
 
-// bool Point::operator==(const char c){
-//     if(data == c){
-//         return data == c;
-//     }
-//     else{
-//         throw 0;
-//     }
-// }
-// Point::~Point(){}
-
 bool operator == (Point const & l, char const & r){
     return l.data == r;
 }
-// char operator= (char c, Point& p){ 
-//     return p.data;
-// }
