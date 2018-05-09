@@ -41,4 +41,3 @@ class Point{
 };
 
 bool operator == (Point const &, char const &);
-// char operator=(char c, Point& p);
