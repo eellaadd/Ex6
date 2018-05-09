@@ -24,8 +24,6 @@ class Board {
         }
     }
     
-            
-
     Board(const Board& b){
         size = b.size;
         pBoard = new Point*[size];
