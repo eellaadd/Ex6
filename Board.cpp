@@ -1,5 +1,5 @@
-#include "Board.hpp"
-#include "Point.hpp"
+#include "Board.h"
+#include "Point.h"
 #include <iostream>
 using namespace std;
 
