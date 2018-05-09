@@ -13,7 +13,6 @@ public:
 	string theCoordinate() const { 
 	std::ostringstream s;
     s << x << "," << y;
-    return s.str();
-		
+    return s.str();	
 	}
 };
