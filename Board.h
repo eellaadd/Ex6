@@ -1,13 +1,15 @@
+#pragma once
 #include <iostream>
 #include "Point.h"
+#include "IllegalCoordinateException.h"
+#include "IllegalCharException.h"
 using namespace std;
 
 class Board {
     public:
     int size;
     char* pBoard;
-  //  int x,y;
-  char temp;
+    char temp;
     
     Board(int size):size(size),
     pBoard(new char [size*size]){
