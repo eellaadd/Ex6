@@ -2,10 +2,15 @@
 #include <iostream>
 using namespace std;
 
+
 Board& Board::operator=(char w){
-    
-    for (int i = 0; i < size*size; i++) {
-        pBoard[i]='.';
+    if(w == '.'|| w == 'O' || w == 'X'){
+        for (int i = 0; i < size*size; i++) {
+            pBoard[i]=w;
+        }
+    }
+    else{
+        throw IllegalCharException(w);
     }
     return *this;
 }
@@ -34,7 +39,14 @@ int Board::getIndex(int x,int y){
     return index;
 }
 
-char& Board::operator[](Point p){
-    int index=getIndex(p.x,p.y);
-    return pBoard[index];
+//board1[{0,1}] = 'x';
+
+Point& Board::operator[](Point p){
+    if(p.x < 0 || p.x >= size || p.y < 0 || p.y >= size){
+        throw IllegalCoordinateException(p.x, p.y);
+    }
+    else{
+        int index=getIndex(p.x,p.y);
+        return p;
+    }
 }
