@@ -1,12 +1,13 @@
-a.out: Board.o IllegalCharException.o IllegalCoordinateException.o Pair.o
+CXX=clang++-5.0
+CXXFLAGS=-std=c++17
 
-Point.o: Point.cpp Point.h
-	clang++-5.0 -std=c++17 -c Point.cpp
-Board.o: Board.cpp Board.h
-	clang++-5.0 -std=c++17 -c Board.cpp
-IllegalCharException.o: IllegalCharException.cpp IllegalCharException.h
-	clang++-5.0 -std=c++17 -c IllegalCharException.cpp
-IllegalCoordinateException.o: IllegalCoordinateException.cpp IllegalCoordinateException.h
-	clang++-5.0 -std=c++17 -c IllegalCoordinateException.cpp
-clean:
+all: Board.o Point.o
+
+Board.o: Board.cpp Board.h Point.h
+	$(CXX) $(CXXFLAGS) --compile Board.cpp -o Board.o
+
+Cell.o: Point.cpp Point.h
+	$(CXX) $(CXXFLAGS) --compile Point.cpp -o Point.o
+
+clean: 
 	rm *.o a.out
